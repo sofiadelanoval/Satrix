@@ -1,0 +1,173 @@
+.titulo-faq {
+  color: #233D4D;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  transition: background-color 0.4s ease;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.titulo-faq:hover {
+  background-color: rgba(247, 156, 29, 0.05);
+}
+
+.faq-buscador {
+  display: block;
+  margin: 0 auto 2.5rem;
+  padding: 12px 24px;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid #233D4D;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-buscador:focus {
+  outline: none;
+  border-color: #0f4c5c;
+  box-shadow: 0 0 0 3px rgba(15, 76, 92, 0.2);
+}
+
+.faq-section {
+  margin-bottom: 2.5rem;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: max-height 0.4s ease;
+  overflow: hidden;
+}
+
+.faq-container.open {
+  max-height: 1000px;
+}
+
+@media (min-width: 992px) {
+  .faq-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2.5rem;
+  }
+}
+
+.faq-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fffbe6, #fff3cc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-header {
+  background-color: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-header > div {
+  flex: 1;
+  text-align: left;
+}
+
+.faq-pregunta {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f4c5c;
+}
+
+.faq-categoria {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #f59e0b;
+  text-transform: uppercase;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f4c5c;
+  transition: transform 0.3s ease;
+}
+
+.faq-card.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 24px;
+  font-size: 1rem; /* Aumentamos un poco */
+  color: #1f2937;  /* Gris oscuro más contrastante */
+  text-align: left;
+  line-height: 1.6; /* Mejora la lectura */
+  font-weight: 400; /* Más definida que 300 pero no tan pesada como 500 */
+}
+
+.faq-card.open .faq-content {
+  max-height: 600px;
+  padding: 16px 24px;
+}
+
+
+@media (max-width: 768px) {
+  .faq-buscador {
+    width: 95%;
+  }
+}
+
+/* --- CATEGORÍA: Encabezado y botón --- */
+.categoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdfaf5; /* blanco cálido, ligeramente más oscuro que el fondo */
+  color: #233D4D;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.categoria-header:hover {
+  background-color: #f8f2eb; /* blanco más marcado al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+
+
+.toggle-icon {
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.categoria-header.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.faq-card.open {
+  border-left: 5px solid #fef8e7;
+}
+
+.faq-card.open .faq-header {
+  background-color: #fef8e7;
+}
