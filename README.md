@@ -1,59 +1,115 @@
-# Satrix
+# Satrix - Plataforma de Facturación Automatizada con IA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+**Satrix** es una plataforma web que automatiza el proceso de facturación electrónica usando inteligencia artificial. Está diseñada para usuarios que requieren generar CFDI a partir de boletos de viaje, envíos y consumos de alimentos, optimizando la experiencia mediante extracción automática de datos con Google Cloud Vision AI y Document AI.
 
-## Development server
+## 🧠 Funcionalidades Clave
 
-To start a local development server, run:
+- Extracción automática de token y RFC desde imágenes o PDFs usando OCR.
+- Interfaz intuitiva, responsiva y optimizada para escritorio y móviles.
+- Facturación electrónica inmediata con validación contra base de datos.
+- Recuperación de CFDI por token y RFC.
+- Asistente virtual para soporte al usuario.
+- Cumplimiento con normativas fiscales mexicanas y principios de seguridad de OWASP.
 
+## 🛠 Tecnologías Usadas
+
+- **Frontend**: Angular 16 + Angular CLI 19.2.7
+- **Backend**: Node.js 22.14.0 + Express
+- **Base de datos**: MariaDB 11.7.2
+- **OCR y AI**: Google Cloud Vision AI + Document AI
+- **Almacenamiento temporal**: Multer
+- **Seguridad**: dotenv, HTTPS, control de acceso basado en roles
+
+## 🚀 Instalación Local
+
+### Clonar el proyecto
 ```bash
+git clone https://github.com/tuusuario/satrix.git
+cd satrix
+```
+
+### Backend (Node.js)
+```bash
+cd backend-gemini
+npm install
+```
+
+#### Crear archivo `.env`
+```env
+GOOGLE_APPLICATION_CREDENTIALS=./keys/clave.json
+PUERTO=3001
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=tu_clave
+DB_NAME=satrix
+```
+
+#### Ejecutar servidor backend
+```bash
+npm start
+```
+
+### Frontend (Angular)
+```bash
+cd ../satrix
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir navegador en `http://localhost:4200`.
 
-## Code scaffolding
+## 🧪 Pruebas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Pruebas Unitarias (Frontend)
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### (Opcional) Pruebas de extremo a extremo (si se implementan)
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📦 Estructura del Proyecto
 
-## Additional Resources
+```
+/satrix
+  └── src/app/pages/           # Vistas principales (facturación, recuperación, etc.)
+/backend-gemini
+  ├── routes/                  # Rutas Express
+  ├── services/                # Lógica de OCR y validaciones
+  ├── uploads/                 # Archivos temporales
+  └── .env                     # Variables sensibles (no subir)
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔒 Seguridad y Buenas Prácticas
+
+- Variables sensibles en `.env` (no incluidas en Git).
+- Datos transmitidos únicamente por HTTPS.
+- Sanitización de entradas del usuario.
+- Cumple con OWASP, ISO/IEC 27001 y NIST SP 800-53.
+
+## 💵 Costos Estimados (Producción)
+
+| Servicio                      | Estimado mensual USD |
+|------------------------------|----------------------|
+| Google Vision AI OCR         | $2,250               |
+| Backend (Cloud Run)          | $25 – $50            |
+| Base de Datos (Cloud SQL)    | $30 – $60            |
+| Frontend (Firebase/CDN)      | $5 – $15             |
+| Almacenamiento (CloudStorage)| $5 – $10             |
+| **Total estimado**           | ~$2,315 – $2,385     |
+
+## 📷 Capturas y Prototipo
+
+- Inicio, Aviso de Privacidad, FAQ, Contacto, Módulo de Facturación y Recuperación de CFDI disponibles en el PDF adjunto al repositorio o en `/docs/prototipo.pdf`.
+
+## 🧭 Diagramas y Modelo de Datos
+
+- Diagramas UML (clases, secuencia, solución y modelo de datos) disponibles en `/docs/diagramas/`.
+
+## 👥 Equipo de Desarrollo
+
+- Evelyn Madai Yam Falcon
+- Francisco Antonio Hidalgo Alvarado
+- Sofia Ruvalcaba de la Noval
