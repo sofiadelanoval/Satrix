@@ -100,16 +100,8 @@ ng e2e
 | Almacenamiento (CloudStorage)| $5 – $10             |
 | **Total estimado**           | ~$2,315 – $2,385     |
 
-## 📷 Capturas y Prototipo
-
-- Inicio, Aviso de Privacidad, FAQ, Contacto, Módulo de Facturación y Recuperación de CFDI disponibles en el PDF adjunto al repositorio o en `/docs/prototipo.pdf`.
-
-## 🧭 Diagramas y Modelo de Datos
-
-- Diagramas UML (clases, secuencia, solución y modelo de datos) disponibles en `/docs/diagramas/`.
-
 ## 👥 Equipo de Desarrollo
 
+- Sofia Ruvalcaba de la Noval
 - Evelyn Madai Yam Falcon
 - Francisco Antonio Hidalgo Alvarado
-- Sofia Ruvalcaba de la Noval
