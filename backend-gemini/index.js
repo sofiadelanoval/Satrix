@@ -8,7 +8,7 @@ const genai = require("@google/generative-ai");
 const visionRoutes = require("./routes/visionRoutes"); // OCR
 const rfcRoutes = require("./routes/rfcRoutes");       // RFC desde imagen o PDF
 
-const app = express(); // 👈 ¡Ahora sí está antes!
+const app = express(); // 
 
 const port = process.env.PORT || 3001;
 
